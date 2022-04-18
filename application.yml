@@ -1,5 +1,5 @@
 server:
-  port: 9531
+  port: 958888888
 spring:
   application:
     name: spring-config
