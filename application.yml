@@ -1,0 +1,22 @@
+server:
+  port: 9531
+spring:
+  application:
+    name: spring-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:fxmdt/java-test-springcloud-config.git
+          search-paths:
+            - java-test-springcloud-config
+      label: master
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://127.0.0.1:9527/eureka/
